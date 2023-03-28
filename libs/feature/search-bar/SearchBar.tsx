@@ -1,21 +1,18 @@
-import { Button, InputAdornment, TextField } from "@mui/material";
+import { Button, InputAdornment, Stack, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import React, { FC, useState } from "react";
-import { useSearchResults } from "@/libs/data-access/useSearchResults";
 
 interface SearchBarProps {}
 
 export const SearchBar: FC<SearchBarProps> = () => {
   const [name, setName] = useState<string>("");
-  const { searchResults = [] } = useSearchResults("");
 
   const onSubmit = () => {
     console.log(name);
-    console.log(searchResults);
   };
 
   return (
-    <>
+    <Stack alignItems="center" spacing={2}>
       <TextField
         id="search-box"
         sx={{
@@ -38,6 +35,6 @@ export const SearchBar: FC<SearchBarProps> = () => {
       <Button variant="text" onClick={onSubmit}>
         Submit
       </Button>
-    </>
+    </Stack>
   );
 };

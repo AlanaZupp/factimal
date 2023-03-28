@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { NavBar } from "@/libs/feature/nav-bar/NavBar";
 import { SearchBar } from "@/libs/feature/search-bar/SearchBar";
-import { Box, Container } from "@mui/material";
+import { Box, Stack } from "@mui/material";
+import { TitleImg } from "@/libs/feature/title-img/TitleImg";
 
 export default function Home() {
   return (
@@ -14,9 +15,10 @@ export default function Home() {
       </Head>
       <NavBar />
       <Box paddingTop={5}>
-        <Container>
+        <Stack spacing={4} alignItems="center">
+          <TitleImg />
           <SearchBar />
-        </Container>
+        </Stack>
       </Box>
     </Box>
   );
